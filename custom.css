@@ -1,0 +1,697 @@
+@charset "UTF-8";
+
+/*
+  ================= AI / SOURCE USE DECLARATION (DRAFT — COMPLETE THIS) =================
+  Per DESN1021 Project 2.2 Assessment Specifications, a summary declaration is
+  required at the top of EVERY file. Replace the bracketed placeholders below,
+  and add inline acknowledgements next to any AI/open-source snippet you use.
+  If you take the AI-assisted code animation option, that code must ALSO be
+  wrapped in inline start/end comments, and you must be able to explain it.
+
+  First name: Sarah Abadam
+  File: custom.css
+
+  Tool/Source:Claude (AI); getbootstrap.com (Bootstrap 5.3 CSS variables); cssportal.com (animated SVG text idea); w3schools.com (flip box idea)
+  Used for: animations and adapting the portfolio filter styles
+  Extent of use: small snippet suggested, then adapted by hand]
+  Date: 23/10/2026]
+
+  If no AI or open-source code was used in this file, replace the above with:
+  "No AI or open-source code was used in this file."
+
+  Declaration ref: DESN1021-Pro2.2-AIDECL#MAGGIE-custom-fb4bae9d6a03176d2ccf9d844bb26772
+  =====================================================================================
+*/
+/* Project 2 Blank Bootstrap 5.3 starter template for DESN1021, Web & Time Based Design. <div> tags should be replaced with semantic HTML tags where appropriate  [DESN1021-Pro2#2-7bddd3e699aksjdhag888adfgkjahdfg8] DO NOT DELETE THIS COMMENT */
+
+/* Author: Web and Time-based Design subject */
+/* Date: 5 October 2026 */
+
+/* sets the default rem size for an entire page (for all sizing to be relative to) */
+
+/* =====================================================================
+   AI / SOURCE USE DECLARATION (DRAFT - CHECK AND COMPLETE)
+   First name: Sarah Abadam
+   File: css/custom.css
+   Tool/Source: Claude (AI); getbootstrap.com (Bootstrap 5.3 CSS variables);
+                cssportal.com (animated SVG text idea); w3schools.com (flip box idea)
+   Used for: site styling, colour palette, and the cute animations
+   Extent of use: full stylesheet drafted by AI, to be reviewed and edited by me
+   Date: 23 October 2026
+   Declaration ref: [add your DESN1021 declaration reference here]
+   Animation code is wrapped in "AI-ASSISTED ANIMATION" start/end comments below.
+   ===================================================================== */
+
+/* Fonts used (loaded in index.html): Oswald (headings), Montserrat (body) */
+
+/* ---------- 1. Palette + Bootstrap 5.3 variable overrides ---------- */
+:root {
+  --cream: #FAEED8;
+  --paper: #FFF9EE;
+  --ink: #2B2B2B;
+  --blue: #3D6AA8;
+  --orange: #E8704A;
+  --orange-text: #B8441F;
+  --gold: #F0C050;
+  --pink: #E0607A;
+  --green: #5A9A72;
+  --purple: #8B6BB5;
+  --track: #E8DABB;
+
+  --bs-body-bg: var(--cream);
+  --bs-body-color: var(--ink);
+  --bs-body-font-family: 'Montserrat', system-ui, sans-serif;
+  --bs-link-color-rgb: 61, 106, 168;
+  --bs-link-hover-color-rgb: 184, 68, 31;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-image: radial-gradient(rgba(240, 192, 80, .28) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  line-height: 1.7;
+}
+
+::selection { background: var(--gold); color: var(--ink); }
+
+/* ---------- 2. Typography ---------- */
+h1, h2, h5, .navbar-brand, .accordion-button {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .03em;
+}
+
+h2 {
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin-top: .4rem;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--orange), var(--gold));
+  transition: width .4s ease;
+}
+
+h2:hover::after { width: 110px; }
+
+h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .2rem; }
+h4 { font-size: .95rem; font-weight: 400; color: var(--orange-text); }
+
+.intro { font-size: 1.1rem; max-width: 65ch; }
+
+.standout {
+  font-weight: 700;
+  padding: 0 .2em;
+  border-radius: .25em;
+  background: linear-gradient(transparent 55%, rgba(240, 192, 80, .65) 55%);
+}
+
+hr.w-50 {
+  border: 0;
+  border-top: 4px dotted var(--gold);
+  opacity: 1;
+  margin: 3rem auto;
+}
+
+/* ---------- 3. Navbar ---------- */
+.navbar {
+  --bs-navbar-color: var(--ink);
+  --bs-navbar-hover-color: var(--orange-text);
+  --bs-navbar-active-color: var(--blue);
+  --bs-navbar-brand-color: var(--blue);
+  --bs-navbar-brand-hover-color: var(--orange-text);
+  background: rgba(250, 238, 216, .88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px dotted var(--gold);
+}
+
+.navbar-brand { font-size: 1.6rem; font-weight: 700; }
+
+.nav-link {
+  position: relative;
+  font-weight: 700;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: .1rem;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--orange);
+  transition: width .3s ease, left .3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { width: 60%; left: 20%; }
+
+/* ---------- 4. Hero ---------- */
+header { position: relative; }
+
+.wrapper { position: relative; }
+
+.wrapper svg {
+  width: 100%;
+  height: clamp(110px, 20vw, 170px);
+}
+
+.px-4 .col-lg-6.bg-white {
+  background-color: var(--paper) !important;
+  border: 3px dashed var(--gold);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 10px 25px rgba(61, 106, 168, .12);
+}
+
+.social { color: var(--blue); }
+.social i,
+.footsocial i,
+.social-share i { display: inline-block; }
+.social:hover { color: var(--orange-text); }
+
+header .overflow-hidden { overflow: visible !important; }
+
+header .overflow-hidden > .container {
+  position: relative;
+  width: min(100%, 480px);
+  margin-top: 2.5rem;
+  rotate: -2deg;
+  transition: rotate .4s ease;
+}
+
+header .overflow-hidden > .container:hover { rotate: 0deg; }
+
+.heroimg {
+  display: block;
+  width: 100%;
+  border: 14px solid #fff;
+  border-bottom-width: 48px;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+}
+
+header .overflow-hidden > .container::before { /* washi tape */
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 110px;
+  height: 30px;
+  translate: -50% 0;
+  rotate: -4deg;
+  z-index: 2;
+  background: repeating-linear-gradient(45deg, #F5D77A 0 8px, #F0C050 8px 16px);
+  opacity: .9;
+}
+
+header .overflow-hidden > .container::after { /* heart sticker */
+  content: "";
+  position: absolute;
+  left: calc(3rem + 20px);
+  bottom: 10px;
+  width: 26px;
+  height: 26px;
+  background: var(--pink);
+  clip-path: path('M13 24s-10-6.5-10-13.5A5.6 5.6 0 0 1 13 7.4a5.6 5.6 0 0 1 10 3.1C23 17.500 13 24 13 24z');
+}
+
+/* sparkles */
+header::before,
+header::after,
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  pointer-events: none;
+}
+
+header::before { width: 26px; height: 26px; top: 130px; right: 10%; }
+header::after  { width: 18px; height: 18px; top: 520px; left: 12%; background: var(--pink); }
+.wrapper::before { width: 20px; height: 20px; top: 10%; left: 8%; background: var(--orange); }
+.wrapper::after  { width: 14px; height: 14px; bottom: 15%; right: 10%; background: var(--purple); }
+
+/* ---------- 5. Cards (Experience / Education / Skills) ---------- */
+.card {
+  --bs-card-bg: var(--paper);
+  --bs-card-border-color: var(--track);
+  --bs-card-border-radius: 1.25rem;
+  --bs-card-inner-border-radius: 1.2rem;
+  --bs-card-cap-bg: var(--paper);
+  border-width: 2px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-.4deg);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .12);
+}
+
+.row-cols-md-3 > .col:nth-child(1) .card { border-top: 7px solid var(--gold); }
+.row-cols-md-3 > .col:nth-child(2) .card { border-top: 7px solid var(--pink); }
+.row-cols-md-3 > .col:nth-child(3) .card { border-top: 7px solid var(--green); }
+
+/* experience timeline */
+.exp-item {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-item p { margin-bottom: .35rem; }
+
+.exp-item:not(:last-of-type)::before { /* dotted line between items */
+  content: "";
+  position: absolute;
+  left: .55rem;
+  top: 1.4rem;
+  bottom: -1.1rem;
+  border-left: 2px dotted var(--gold);
+}
+
+.diamond {
+  position: absolute;
+  left: .15rem;
+  top: .4rem;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 2px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  transition: transform .4s ease, background .3s ease;
+}
+
+.exp-item:hover .diamond {
+  transform: rotate(225deg) scale(1.35);
+  background: var(--orange);
+}
+
+.years {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--orange-text);
+}
+
+.clients { padding-left: 1.1rem; margin-bottom: 0; }
+.clients li::marker { color: var(--orange); }
+
+/* skills list */
+.card-body > ul:has(> .expertise-list) { padding-left: 0; list-style: none; }
+
+.expertise-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.expertise-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: .4rem;
+  transition: transform .25s ease;
+}
+
+.expertise-list li::before {
+  content: "";
+  position: absolute;
+  left: .15rem;
+  top: .6rem;
+  width: .65rem;
+  height: .65rem;
+  background: var(--green);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: transform .4s ease, background .3s ease;
+}
+
+.expertise-list li:hover { transform: translateX(6px); }
+.expertise-list li:hover::before { transform: rotate(225deg) scale(1.3); background: var(--purple); }
+
+/* ---------- 6. Flip box (resume) ---------- */
+.flip-box {
+  width: 100%;
+  max-width: 260px;
+  height: 200px;
+  margin: 1.5rem auto 0;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .8s cubic-bezier(.34, 1.3, .64, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner,
+.flip-box:focus-within .flip-box-inner { transform: rotateY(180deg); }
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background: linear-gradient(160deg, #F7D98B, var(--gold));
+  border: 3px dashed #fff;
+}
+
+.flip-box-back {
+  background: var(--blue);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.flip-box h2 { font-size: 1.5rem; margin: 0; color: var(--ink); }
+.flip-box-back h2 { font-size: 1.2rem; color: #fff; margin-bottom: 1rem; }
+.flip-box h2::after { display: none; }
+.brief { color: var(--blue); }
+
+.flip-box-back .btn {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: var(--blue);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: var(--blue);
+  --bs-btn-active-bg: #fff;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-border-radius: 50rem;
+}
+
+/* ---------- 7. Gallery ---------- */
+a.col-sm-4 {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.lights {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 8px solid #fff;
+  border-bottom-width: 22px;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .14);
+  transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease;
+}
+
+.row > a.col-sm-4:nth-child(odd):hover .lights  { transform: scale(1.05) rotate(-2deg); box-shadow: 0 16px 30px rgba(0, 0, 0, .22); }
+.row > a.col-sm-4:nth-child(even):hover .lights { transform: scale(1.05) rotate(2deg);  box-shadow: 0 16px 30px rgba(0, 0, 0, .22); }
+
+/* ---------- 8. Accordion (Services) ---------- */
+.accordion {
+  --bs-accordion-bg: var(--paper);
+  --bs-accordion-border-color: var(--track);
+  --bs-accordion-border-width: 2px;
+  --bs-accordion-border-radius: 1.25rem;
+  --bs-accordion-inner-border-radius: 1.1rem;
+  --bs-accordion-btn-color: var(--ink);
+  --bs-accordion-btn-bg: var(--paper);
+  --bs-accordion-active-color: var(--blue);
+  --bs-accordion-active-bg: #FDEBC0;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(61, 106, 168, .25);
+}
+
+.accordion .accordion-item {
+  margin-bottom: .75rem;
+  border: 2px solid var(--track);
+  border-radius: var(--bs-accordion-border-radius);
+  overflow: hidden;
+  transition: transform .25s ease;
+}
+
+.accordion .accordion-item:not(:first-of-type) { border-top: 2px solid var(--track); }
+.accordion .accordion-item:hover { transform: translateX(6px); }
+
+.accordion-button { font-size: 1.25rem; font-weight: 700; }
+
+.accordion-button::before { /* little diamond marker */
+  content: "";
+  flex: 0 0 auto;
+  width: .7rem;
+  height: .7rem;
+  margin-right: .8rem;
+  border-radius: 2px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  transition: transform .4s ease, background .3s ease;
+}
+
+.accordion-button:not(.collapsed)::before { transform: rotate(225deg) scale(1.3); background: var(--pink); }
+.accordion-button:hover::before { background: var(--orange); }
+
+.accordion-body h3 { color: var(--orange-text); margin-top: .5rem; }
+
+/* ---------- 9. Contact form ---------- */
+.m-15px-tb { margin-top: 15px; margin-bottom: 15px; }
+.p-15px-b { padding-bottom: 15px; }
+
+.contact-form .form-group { margin-bottom: 1rem; }
+
+.form-control {
+  background: var(--paper);
+  border: 2px solid var(--track);
+  border-radius: 1rem;
+  padding: .75rem 1rem;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.form-control:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 .25rem rgba(61, 106, 168, .2);
+  transform: translateY(-2px);
+}
+
+.formanchor { color: var(--blue); text-underline-offset: .25em; }
+.formanchor:hover { color: var(--orange-text); }
+
+.px-btn.theme.formanchor {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1.75rem;
+  border-radius: 50rem;
+  background: var(--orange-text);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 0 #8C3216;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.px-btn.theme.formanchor:hover {
+  background: var(--blue);
+  box-shadow: 0 6px 0 #284A78;
+  transform: translateY(-3px);
+}
+
+.px-btn.theme.formanchor:active { transform: translateY(3px); box-shadow: 0 2px 0 #284A78; }
+
+.arrow { font-style: normal; transition: transform .25s ease; }
+.arrow::after { content: "\2192"; }
+.px-btn:hover .arrow { transform: translateX(6px); }
+
+.contact-name {
+  padding: .9rem 1.25rem;
+  margin-bottom: 1rem;
+  background: var(--paper);
+  border-left: 6px solid var(--gold);
+  border-radius: .75rem;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.contact-name:hover { transform: translateX(6px); border-color: var(--pink); }
+.contact-name h5 { margin: 0; font-size: .95rem; text-transform: uppercase; color: var(--orange-text); }
+.contact-name p { margin: 0; }
+
+.social-share { gap: .6rem; margin-top: 1rem; }
+
+.social-share a {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 1.2rem;
+  transition: transform .3s ease, background .3s ease;
+}
+
+.social-share a:hover { transform: translateY(-5px) scale(1.1); }
+.social-share .instagram:hover { background: var(--pink); }
+.social-share .behance:hover   { background: #1769FF; }
+.social-share .linkedin:hover  { background: #0A66C2; }
+
+/* ---------- 10. Floating social bar ---------- */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1030;
+  translate: 0 -50%;
+}
+
+.icon-bar a {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: .4rem;
+  color: #fff;
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, .2);
+  transition: width .25s ease;
+}
+
+.icon-bar a:hover { width: 62px; color: #fff; }
+.icon-bar .facebook { background: #3B5998; }
+.icon-bar .twitter  { background: #111; }
+.icon-bar .google   { background: #DD4B39; }
+.icon-bar .linkedin { background: #007BB5; }
+.icon-bar .youtube  { background: #BB0000; }
+
+/* ---------- 11. Footer ---------- */
+.footsocial { color: var(--blue); }
+.footsocial:hover { color: var(--orange-text); }
+
+/* =====================================================================
+   AI-ASSISTED ANIMATION (Claude) - Start
+   ===================================================================== */
+
+/* Animated SVG name: outline draws itself, then fills in */
+.wrapper svg text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 11vw, 6rem);
+  letter-spacing: .04em;
+  fill: var(--blue);
+  fill-opacity: 0;
+  stroke: var(--orange);
+  stroke-width: 2px;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: draw 3s ease forwards, fillIn 1s ease 2.4s forwards;
+}
+
+@keyframes draw   { to { stroke-dashoffset: 0; } }
+@keyframes fillIn { to { fill-opacity: 1; stroke-width: 0; } }
+
+/* Gentle entrance for the hero */
+.px-4 .col-lg-6.bg-white { animation: fadeUp .9s ease .6s both; }
+header .overflow-hidden > .container { animation: fadeIn 1s ease 1s both, bob 5s ease-in-out 2s infinite; }
+.px-4 .standout { background-size: 0 100%; background-repeat: no-repeat; animation: swipe .8s ease 1.6s forwards; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp { from { opacity: 0; translate: 0 30px; } to { opacity: 1; translate: 0 0; } }
+@keyframes swipe  { to { background-size: 100% 100%; } }
+@keyframes bob    { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+/* Twinkling sparkles */
+header::before, header::after, .wrapper::before, .wrapper::after { animation: twinkle 2.6s ease-in-out infinite; }
+header::after { animation-delay: .8s; }
+.wrapper::before { animation-delay: 1.4s; }
+.wrapper::after  { animation-delay: .4s; }
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(.6) rotate(0deg); opacity: .6; }
+  50%      { transform: scale(1.15) rotate(25deg); opacity: 1; }
+}
+
+/* Heartbeat on the sticker + pulsing timeline diamonds */
+header .overflow-hidden > .container::after { animation: heartbeat 1.6s ease-in-out infinite; }
+
+@keyframes heartbeat {
+  0%, 40%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(1.05); }
+}
+
+.diamond { animation: ring 2.8s ease-out infinite; }
+
+@keyframes ring {
+  0%   { box-shadow: 0 0 0 0 rgba(240, 192, 80, .7); }
+  70%  { box-shadow: 0 0 0 .7rem rgba(240, 192, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(240, 192, 80, 0); }
+}
+
+/* Wiggle / bounce on hover */
+.social:hover i,
+.footsocial:hover i,
+.navbar-brand:hover,
+.icon-bar a:hover i { animation: wiggle .6s ease; }
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1.1); }
+  25% { transform: rotate(-12deg) scale(1.2); }
+  50% { transform: rotate(10deg) scale(1.2); }
+  75% { transform: rotate(-6deg) scale(1.15); }
+}
+
+.brief { animation: hop 2s ease-in-out infinite; }
+
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Reveal on scroll (only where the browser supports scroll-driven animation) */
+@supports (animation-timeline: view()) {
+  .card,
+  .accordion-item,
+  .contact-name,
+  a.col-sm-4 .lights {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; translate: 0 40px; }
+    to   { opacity: 1; translate: 0 0; }
+  }
+}
+
+/* Soft fade when an accordion item opens */
+.accordion-collapse.show .accordion-body { animation: fadeUp .4s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .wrapper svg text { fill-opacity: 1; stroke-width: 0; stroke-dashoffset: 0; }
+}
+
+/* Project 2 Blank Bootstrap 5.3 starter template for DESN1021, Web & Time Based Design. <div> tags should be replaced with semantic HTML tags where appropriate  [DESN1021-Pro2#2-7bddd3e699aksjdhag888adfgkjahdfg8] DO NOT DELETE THIS COMMENT */
+
+/* END AI / SOURCE USE DECLARATION — nothing to fill in here; the completed declaration goes in the top comment. Do not delete.
+   Declaration ref: DESN1021-Pro2.2-AIDECL#MAGGIE-custom-fb4bae9d6a03176d2ccf9d844bb26772 */

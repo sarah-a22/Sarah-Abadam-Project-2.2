@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!-- Project 2 Blank Bootstrap 5.3 starter template for DESN1021, Web & Time Based Design. <div> tags should be replaced with semantic HTML tags where appropriate  [DESN1021-Pro2#2-7bddd3e699aksjdhag888adfgkjahdfg8] DO NOT DELETE THIS COMMENT-->
+
+<!-- Date: 5 October 2026 -->
+<!-- Author: Web and Time-based Design subject -->
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <!-- Required Bootstrap meta tags -->
+    <meta charset="utf-8">
+
+    <!--
+      ================= AI / SOURCE USE DECLARATION (DRAFT — COMPLETE THIS) =================
+      Per DESN1021 Project 2.2 Assessment Specifications, a summary declaration is
+      required at the top of EVERY file. Replace the bracketed placeholders below,
+      and add inline acknowledgements next to any AI/open-source snippet you use.
+      If you take the AI-assisted code animation option, that code must ALSO be
+      wrapped in inline start/end comments, and you must be able to explain it.
+
+      First name: Sarah Abadam
+      File: index.html
+
+      Tool/Source: Claude and getbootstrap.com
+      Used for: adapting the Bootstrap lightbox gallery
+      Extent of use: small snippet suggested, then adapted by hand
+      Date: 10 October 2026
+
+      If no AI or open-source code was used in this file, replace the above with:
+      "No AI or open-source code was used in this file."
+
+      Declaration ref: DESN1021-Pro2.2-AIDECL#MAGGIE-index-6f7128088b94f518821db3d34e0acc7c
+      =====================================================================================
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Other meta tags -->
+    <meta name="description" content="Maggie Simpsons Portfolio Website">
+    <meta name="author" content="Maggie Simpson">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" crossorigin="anonymous">
+
+
+    <!-- ***** Link tags ***** -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Font: Oswald and Montserrat - Note: it is a good practice to mention your selected typefaces in your comment -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Portfolio filter - Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-9Z9AuAj0Xi0z7WFOSgjjow8EnNY9wPNp925TVLlAyWhvZPsf5Ks23Ex0mxIrWJzJ" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <!-- IDEA: this is where Bootstrap's CSS is loaded in via their CDN - you don't need to include the actual files in your site folder, but they are useful to refer to-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Your custom styles for this template - must be after Bootstrap's link element to override it (load after) as needed -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <title>Sarah Abadam | Portfolio</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- NAVBAR - Start - Sourced: https://getbootstrap.com/docs/5.3/components/navbar/  -->
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#top">Sarah Abadam</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#top">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutme">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contactme">Contact Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pdf/Sarah_Abadam.pdf" target="_blank">Resume</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVBAR - End -->
+
+      <!-- HEROES - Start - source: https://getbootstrap.com/docs/5.3/examples/heroes/  -->
+      <div class="px-4 pt-5 my-5 text-center">
+
+
+        <!-- TEXT ANIMATION - Start: https://www.cssportal.com/css-animated-text-generator/ -->
+        <div class="wrapper">
+          <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+              Sarah Abadam
+            </text>
+          </svg>
+        </div>
+        <!-- TEXT ANIMATION - End -->
+
+
+        <div class="col-lg-6 mx-auto bg-white">
+          <p>Hi I am Sarah Abadam! I am a creative freelancer based in Australia who has a deep love for allowing my artistic nature to flourish. I specialise primarily in <span class="standout">Photography</span>, <span class="standout">Typography</span> and <span class="standout">Web Design</span>. However, , but I also enjoy exploring diverse styles and forms of art to broaden my artistic palette and enhance my skill set. What makes me passionate about being a creative is combining technology and creativity to help design tailor made solutions and help you tell your brand story.</p>
+
+          <!-- SOCIAL ICONS - Header - Start: https://icons.getbootstrap.com/ -->
+          <p>
+            <a href="https://facebook.com" target="_blank" class="social"><i class="bi bi-facebook fs-1 p-2"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social"><i class="bi bi-instagram fs-1 p-2"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social"><i class="bi bi-linkedin fs-1 p-2"></i></a>
+          </p>
+          <!-- SOCIAL ICONS - Header - End -->
+
+        </div>
+        <div class="overflow-hidden">
+          <div class="container px-5">
+            <img src="img/portrait_1.jpg" class="img-fluid heroimg" alt="Portrait of Sarah A" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <!-- HEROES - End -->
+    </header>
+
+    <!-- Content goes here -->
+    <div class="container">
+      <!-- CARDS - Start: https://getbootstrap.com/docs/5.3/components/card/ -->
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mt-3 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 id="aboutme" class="card-title">Experience</h2>
+
+<section>
+<div class="exp-item">
+        <div class="diamond"></div>
+        <p class="years">2023 — present</p>
+        <h3>Freelance graphic designer</h3>
+        <p>Creating logos, mural designs, and illustrations.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="diamond"></div>
+        <p class="years">2025 — present</p>
+        <h3>Web design</h3>
+        <p>For new launching companies.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="diamond"></div>
+        <p class="years">2024 — present</p>
+        <h3>Photography</h3>
+        <p>Clients:</p>
+        <ul class="clients">
+          <li>Weddings</li>
+          <li>Graduations</li>
+          <li>Cosplays</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="diamond"></div>
+        <p class="years">2023 — present</p>
+        <h3>Floral designs</h3>
+        <p>Clients:</p>
+        <ul class="clients">
+          <li>Businesses → Kate's Boutique, Florus, Maria &amp; Co.</li>
+          <li>Weddings</li>
+          <li>Libraries</li>
+        </ul>
+      </div>
+    </section>
+
+
+              <!-- FLIPBOX - Start: https://www.w3schools.com/howto/howto_css_flip_box.asp -->
+
+              <div class="flip-box">
+                <div class="flip-box-inner">
+
+                  <div class="flip-box-front">
+                    <i class="bi bi-file-earmark-pdf brief fs-1"></i>
+                    <h2>Resume</h2>
+                  </div>
+
+                  <div class="flip-box-back">
+                    <h2 class="text-center">Want to see my resume?</h2>
+                    <p><button type="submit" class="btn btn-outline-secondary btn-lg" onclick="window.open('pdf/Sarah_Abadam.pdf'); return true;">Download my CV!</button></p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- FLIPBOX - End -->
+
+            </div>
+          </div>
+        </div>
+        <div class="col mt-3 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Education</h2>
+              <h3>B. Visual Communications (Graphic Design)</h3>
+              <h4>Western Sydney University</h4>
+              <p class="card-text">I am studying visual communication specialising in <span class="standout">photography</span> and <span class="standout">website</span> design. Subjects of study and interest include:</p>
+              <ul>
+                <li><strong>DESN1011 Image Design</strong> &mdash; with a focus on image making through photographic and illustrative methods, techniques and mediums.</li>
+                <li><strong>DESN1021 Web and Time-based Design</strong> &mdash; covered the skills and design understandings appropriate to using major web and time-based design technologies such as HTML, CSS and Bootstrap 5. </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col mt-3 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Skills and Abilities</h2>
+              <p class="card-text">According to Simpsons Fandom Maggie has the following skills:</p>
+              <ul>
+      <ul class="expertise-list">
+        <li>Adobe Photoshop</li>
+        <li>Adobe Illustrator</li>
+        <li>Adobe InDesign</li>
+        <li>Adobe Lightroom</li>
+        <li>Camera → Canon EOS R50</li>
+      </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CARDS - end -->
+    </div>
+    <!-- Container - End -->
+
+
+    <hr class="w-50 mx-auto">
+
+
+    <!-- Container - Start -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+          <h2 id="portfolio">Portfolio Gallery</h2>
+          <p class="intro">Welcome to examples of my work. If you like what you see why not connect with me!</p>
+        </div>
+      </div>
+
+
+      <!-- LIGHTBOX - Start of image gallery - sourced from: https://www.cssscript.com/lightbox-gallery-bootstrap-5/ -->
+      <div class="row">
+        <a href="img/photograph_1.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_1.jpg" alt="Example of Sarah's Illustration work" class="img-fluid lights">
+        </a>
+
+        <a href="img/photograph_2.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_2.jpg" alt="Example of Sarah's Photography work" class="img-fluid lights">
+        </a>
+
+        <a href="img/photograph_3.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_3.jpg" alt="Example of Sarah's Magazine work" class="img-fluid lights">
+        </a>
+      </div>
+
+      <div class="row">
+        <a href="img/photograph_4.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_4.jpg" alt="Example of Sarah's YouTube work" class="img-fluid lights">
+        </a>
+
+        <a href="img/photograph_5.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_5.jpg" alt="Example of Sarah's Vimeo work" class="img-fluid lights">
+        </a>
+
+        <a href="img/photograph_6.jpg" data-toggle="lightbox" data-gallery="mixedgallery" class="col-sm-4">
+          <img src="img/photograph_6.jpg" alt="Example of Sarah's Instagram work" class="img-fluid lights">
+        </a>
+      </div>
+      <!-- LIGHTBOX - End of image gallery -->
+    </div>
+    <!-- Container - End -->
+
+
+    <hr class="w-50 mx-auto">
+
+
+    <!-- Container - Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+          <h2 id="services">Services</h2>
+          <p class="intro">Want to know what I can offer you? Read details about what I can do for you and your business! </p>
+
+          <!-- ACCORDION BLOG POST - Start: Adapted from https://getbootstrap.com/docs/5.3/components/accordion/ -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button uniquebutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Illustration
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>I produce <strong>original illustrations</strong> for branding, packaging, posters, and social media. Every piece is drawn to match your style and audience. Digital files are delivered in the formats you need.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed uniquebutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Photography
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <h3>Wedding Photography</h3> 
+                  <p>I capture the key moments of your day with a natural, candid eye. From the getting-ready shots to the final dance, the photos tell the whole story. Edited images are delivered in high resolution so you can print or share them.</p>
+                  <h3>Graduation Photography</h3> 
+                  <p>I take relaxed, polished portraits to celebrate your achievement. Sessions can be held on campus or at a location you choose. You will get a set of edited photos for framing, sharing, and keepsakes.</p>
+                  <h3>Cosplay Photography</h3> 
+                  <p>I photograph cosplayers with attention to costume detail, pose, and setting. Shoots can be styled to match your character, from moody and cinematic to bright and playful. It is perfect for building a portfolio or sharing at conventions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed uniquebutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Illustration
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>I produce <strong>original illustrations</strong> for branding, packaging, posters, and social media. Every piece is drawn to match your style and audience. Digital files are delivered in the formats you need.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- ACCORDION BLOG POST - End -->
+    </div>
+    <!-- Container - End -->
+
+    <hr class="w-50 mx-auto">
+
+
+    <!-- Container - Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 id="contactme">Work, Collaborate, Commission</h2>
+          <p class="intro">Whether your a fellow designer, prospective client or design house <span class="standout">Sarah Abadam</span> can help you. If you would like to collaborate, commission or just chat you can contact me using my social media accounts (LinkedIn, Behance, Instagram), email, telephone or complete the contact form below!</p>
+          <p><strong>I am looking forward to hearing from you!</strong></p>
+
+          <!-- FORM - Start - Sourced from: https://www.bootdey.com/snippets/view/contact-page-section -->
+
+          <div class="row flex-row-reverse">
+            <div class="col-md-7 col-lg-8 m-15px-tb formcol">
+              <div class="contact-form">
+                <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                  <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
+                  <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span></div>
+                  <div class="row">
+                    <div class="col-md-6 formcol">
+                      <div class="form-group">
+                        <input id="name" type="text" placeholder="Full Name" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6 formcol">
+                      <div class="form-group">
+                        <input id="email" type="text" placeholder="Email Address" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-12 formcol">
+                      <div class="form-group">
+                        <input id="subject" type="text" placeholder="Subject" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-12 formcol">
+                      <div class="form-group">
+                        <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12 formcol">
+                      <div class="send">
+                        <a id="send_message" class="px-btn theme formanchor" href="#"><span>Contact Us</span> <i class="arrow"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 m-15px-tb formcol">
+              <div class="contact-name">
+                <h5>Mail</h5>
+                <p> <a class="formanchor" href="mailto:sarah@gmail.com">sarah@gmail.com</a></p>
+              </div>
+              <div class="contact-name">
+                <h5>Visit My Studio</h5>
+                <p>Somewhere, <br>Nowhere, Sydney, NSW</p>
+              </div>
+              <div class="contact-name">
+                <h5>Phone</h5>
+                <p> <a class="formanchor" href="tel:12345678">+61 1234 5678</a> </p>
+              </div>
+              <div class="social-share nav">
+                <a class="instagram" href="https://instagram.com" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a class="behance" href="https://www.behance.net" target="_blank">
+                  <i class="bi bi-behance"></i>
+                </a>
+                <a class="linkedin" href="https://linkedin.com" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORM - End -->
+        </div>
+      </div>
+      <!-- Container - End -->
+    </div>
+
+    <!-- FLOATING STICKY SOCIAL MEDIA - Start: https://www.w3schools.com/howto/howto_css_sticky_social_bar.asp -->
+    <div class="icon-bar d-none d-md-block">
+      <a href="https://facebook.com" target="_blank" class="facebook"><i class="bi bi-facebook fs-3"></i></a>
+      <a href="https://x.com" target="_blank" class="twitter"><i class="bi bi-twitter-x fs-3"></i></a>
+      <a href="https://google.com" target="_blank" class="google"><i class="bi bi-google fs-3"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="bi bi-linkedin fs-3"></i></a>
+      <a href="https://youtube.com" target="_blank" class="youtube"><i class="bi bi-youtube fs-3"></i></a>
+    </div>
+    <!-- FLOATING STICKY SOCIAL MEDIA - End -->
+
+
+    <hr class="w-50 mx-auto">
+
+
+    <!-- FOOTER - Start -->
+    <div class="container footer my-3 py-3">
+      <div class="row">
+        <div class="col">
+
+          <!-- Footer information and social media links -->
+          <p class="text-center mt-3">
+            <a class="footsocial" href="tel:1800SarahA"><i class="bi bi-telephone fs-1 p-2"></i></a>
+            <a class="footsocial" href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram fs-1 p-2"></i></a>
+            <a class="footsocial" href="mailto:sarah@gmail.com" target="_blank"><i class="bi bi-envelope fs-1 p-2"></i></a>
+            <a class="footsocial" href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin fs-1 p-2"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER - End -->
+
+    <!-- =================No Content below here========================= -->
+    <!-- Bootstrap JavaScript================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!--  BOOTSTRAP BUNDLE WITH POPPER - Start -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!--  BOOTSTRAP BUNDLE WITH POPPER - End -->
+
+    <!-- LIGHTBOX JS - Start -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js" integrity="sha384-hmO927BeGpSftObswxhZUK8wHu+kAA9eqZX4frVKbcAzbhVd+hMTv57SECK5k8de" crossorigin="anonymous"></script>
+    <!-- LIGHTBOX JS - End -->
+
+    <!-- PORTFOLIO FILTER - Start -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Run on page load to show all items
+        filterSelection("all");
+
+        // Add active class to the current control button (highlight it)
+        var btnContainer = document.getElementById("filters");
+        var btns = btnContainer.getElementsByClassName("filter");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function() {
+            var current = btnContainer.querySelector(".active");
+            if (current) {
+              current.classList.remove("active");
+            }
+            this.classList.add("active");
+          });
+        }
+      });
+
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("gallery-item");
+        for (i = 0; i < x.length; i++) {
+          // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+          if (c == "all" || x[i].classList.contains(c)) {
+            x[i].classList.add("show");
+          } else {
+            x[i].classList.remove("show");
+          }
+        }
+      }
+    </script>
+    <!-- PORTFOLIO FILTER - End -->
+
+  </body>
+</html>
+
+<!-- Project 2 Blank Bootstrap 5.3 starter template for DESN1021, Web & Time Based Design. <div> tags should be replaced with semantic HTML tags where appropriate  [DESN1021-Pro2#2-7bddd3e699aksjdhag888adfgkjahdfg8] DO NOT DELETE THIS COMMENT-->
+<!-- Bootstrap 5.3 template designed for the Web and Time-based Design subject [DESN1021] - 2026 -->
+
+<!-- END AI / SOURCE USE DECLARATION — nothing to fill in here; the completed declaration goes in the top comment. Do not delete.
+     Declaration ref: DESN1021-Pro2.2-AIDECL#MAGGIE-index-6f7128088b94f518821db3d34e0acc7c -->
